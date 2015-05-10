@@ -1,0 +1,6 @@
+setwd("C:/Users/Andrew/Desktop/Data")
+power <- read.csv("power.csv")
+d <- as.POSIXct(paste(power$Date, power$Time),format="%d/%m/%Y %H:%M:%S")
+plot(d, power$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab="")
+dev.copy(png, file = "plot2.png", width=480, height=480)
+dev.off()
